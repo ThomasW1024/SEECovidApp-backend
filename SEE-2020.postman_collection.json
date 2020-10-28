@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "798de963-20ea-478f-8673-0fbf4260db65",
+		"name": "SEE-2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "insert verification code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"verificationCode\": \"123\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:3000/verification_code",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"verification_code"
+					]
+				},
+				"description": "sample post with body"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secret List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"secret\": \"abc\",\n        \"time\": \"\"\n    },\n    {\n        \"secret\": \"def\",\n        \"time\": \"\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:3000/get_secret_list",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"get_secret_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert Secret key list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"secrets\": [\n        {\n            \"secret\": \"abc\",\n            \"time\": \"2020-10-28 13:32:46\"\n        },\n        {\n            \"secret\": \"def\",\n            \"time\": \"2020-10-28 13:30:46\"\n        },\n        {\n            \"secret\": \"klm\",\n            \"time\": \"2020-9-22 10:30:36\"\n        }\n    ],\n    \"verificationCode\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:3000/security_code",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"security_code"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
