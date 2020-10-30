@@ -1,6 +1,6 @@
 const sqlite3 = require("sqlite3").verbose();
 const _ = require("lodash");
-const dateFormat = "YYYY-MM-DDTHH:MM:SS";
+const dateFormat = "YYYY-mm-dd HH:MM:SS";
 
 const database = () => {
   const db = new sqlite3.Database('assets/sample.db');
@@ -42,7 +42,7 @@ const database = () => {
   const insertSecretCode = (list) => {
     _.forEach(list, ({ secret, time }) => {
       db.run(
-        'INSERT INTO secret_table(SEC_CODE, GENERATE_DT, CREATED_DT) VALUES($key, DateTime($time), DateTime("now"))',
+        'INSERT INTO secret_table(SEC_CODE, GENERATE_DT, CREATED_DT) VALUES($key, $time, DateTime("now"))',
         {
           $key: secret,
           $time: time

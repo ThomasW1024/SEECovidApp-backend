@@ -36,7 +36,7 @@ app.post('/security_code', (req, res) => {
     db.deleteUsedVerificationCode(id);
     res.status(200).send("OK");
   }).catch(err => {
-    res.status(401).send("unknown Verification Code");
+    res.status(400).send("unknown Verification Code");
   })
 })
 
